@@ -1,5 +1,5 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
-<!doctype html><html class="booting"><head><meta charset=utf8><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Yellowtail&display=swap" rel="stylesheet"><style>#boot{position:fixed;left:0;top:0;right:0;bottom:0;z-index:2147483647;background:#0b0710;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;transition:opacity .35s,visibility 0s}html:not(.booting) #boot{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .35s,visibility 0s .35s}#boot img{width:min(62vw,260px);height:auto;display:block}#boot .bt{font:400 clamp(44px,14vw,64px)/1.15 'Caprasimo',Georgia,serif;color:#fff;letter-spacing:1px;min-height:1.2em;white-space:nowrap}#boot .bt i{display:inline-block;width:3px;height:.85em;background:#fff;margin-left:4px;vertical-align:-.05em;animation:btb .7s steps(1) infinite}@keyframes btb{50%{opacity:0}}#boot svg{width:min(88vw,440px);height:auto;display:block;overflow:visible}#boot text{font-family:'Yellowtail','Snell Roundhand','Apple Chancery',cursive;font-size:150px;fill:#fff;fill-opacity:0;stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1500;stroke-dashoffset:1500}#bwipe{transform-box:fill-box;transform-origin:0 0;transform:scaleX(0)}#boot.go #bwipe{animation:bwipe 2.4s cubic-bezier(.4,.1,.4,1) forwards}@keyframes bwipe{to{transform:scaleX(1)}}#boot.go text{animation:bdraw 2.4s ease-in-out forwards,bfill .9s ease 2.2s forwards}@keyframes bdraw{to{stroke-dashoffset:0}}@keyframes bfill{to{fill-opacity:1;stroke-width:0}}</style><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}.day{position:relative}
+<!doctype html><html><head><meta charset=utf8><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Caprasimo&display=swap" rel="stylesheet"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}.day{position:relative}
 .doff-sw{position:absolute;top:2px;right:0;display:flex;align-items:center;gap:8px;background:none;border:0;padding:4px;font:600 12px Manrope,sans-serif;color:var(--dim);cursor:pointer;z-index:2}
 .doff-sw i{width:38px;height:22px;border-radius:12px;background:rgba(120,110,95,.35);position:relative;transition:.2s}
 .doff-sw i:after{content:"";position:absolute;top:2px;left:2px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.3);transition:.2s}
@@ -52,7 +52,7 @@
 .tvx-sel .chk{margin-top:12px}
 .chk.tvx-r{flex-direction:row-reverse;justify-content:space-between}.chk.tvx-r>span{flex:1;min-width:0;text-align:left}
 </style>
-</head><body><div id="boot" aria-hidden="true"><svg viewBox="0 0 600 240" xmlns="http://www.w3.org/2000/svg"><defs><clipPath id="bclip"><rect id="bwipe" x="0" y="0" width="600" height="240"/></clipPath></defs><g clip-path="url(#bclip)"><text x="300" y="165" text-anchor="middle">Daybook</text></g></svg></div><script>(function(){window.__bt0=0;var b=document.getElementById('boot'),g=false;function go(){if(g)return;g=true;window.__bt0=Date.now();b.classList.add('go')}try{document.fonts.load("150px Yellowtail","Daybook").then(go,go)}catch(e){go()}setTimeout(go,1500)})();</script>
+</head><body>
 <title>Daybook</title>
 
 
@@ -9283,21 +9283,6 @@ function apply(){
 var busy=false;
 new MutationObserver(function(){if(busy)return;busy=true;setTimeout(function(){try{apply()}catch(e){}busy=false},0)}).observe(app,{childList:true,subtree:true});
 try{apply()}catch(e){}
-})();
-</script>
-<script>
-/* Keep a plain Daybook screen on top until icons, fonts and layout are ready, so the half-loaded look never shows. */
-(function () {
-    var d = document.documentElement, done = false;
-    function show() { if (done) return; done = true; requestAnimationFrame(function () { requestAnimationFrame(function () { setTimeout(function () { d.classList.remove('booting'); }, Math.max(120, 4300 - (Date.now() - (window.__bt0 || Date.now())))); }); }); }
-    function ready() {
-        var P = [];
-        try { if (document.fonts && document.fonts.ready) P.push(document.fonts.ready); } catch (e) { }
-        try { Array.prototype.forEach.call(document.images, function (i) { if (i.decode && i.src) P.push(i.decode().catch(function () { })); }); } catch (e) { }
-        Promise.all(P).then(show, show);
-    }
-    if (document.readyState === 'complete') ready(); else window.addEventListener('load', ready);
-    setTimeout(function () { done = true; d.classList.remove('booting'); }, 7500);
 })();
 </script>
 <script>
